@@ -66,7 +66,7 @@ if __name__ == '__main__':
 	try:
 		while True:
 			cli_sock, cli_addr = serv_sock.accept()
-			t = threading.Thread(target=echohandler, args=[cli_sock])
+			t = threading.Thread(target=echohandler1, args=[cli_sock])
 			t.start()
 	except:
 		traceback.print_exc()

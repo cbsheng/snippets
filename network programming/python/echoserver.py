@@ -30,7 +30,7 @@ while True:
 		#新连接到来，接受1024字节大小的数据
 		data = client_sock.recv(1024)
 		data = data.strip()
-		while data != 'end':
+		while data and data != 'end':
 			print "from client: ", data
 			#将接受到的数据发回给客户端
 			client_sock.sendall(data)
