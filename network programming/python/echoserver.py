@@ -11,7 +11,7 @@ host, port = '', 8123
 try:
 	#创建一个 socket
 	sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-	#SO_REUSEADDR 是一个可以将释放掉的端口立即重新使用的一个选项
+	#SO_REUSEADDR 是一个可以将释放掉的端口立即重新使用的一个选项，但实际上 TCP 原则是不建议这样，因为这样会影响 TCP 连接的释放中的2MSL
 	sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 	#将 socket 绑定到对应的 ip 和 端口上
 	sock.bind((host, port))
